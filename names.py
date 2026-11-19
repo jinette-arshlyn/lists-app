@@ -14,4 +14,18 @@ def add_student():
 
     print(f"Student {name} added successfully!")
 
-print(add_student())
+def view_students():
+    try:
+        with open('students.txt', 'r') as file:
+            students = file.readlines()
+            if not students:
+                print("No students found.")
+                return
+            for student in students:
+                name, age, grade = student.strip().split(',')
+                print(f"Name: {name}, Age: {age}, Grade: {grade}")
+    except FileNotFoundError:
+        print("No students found.")
+
+add_student()
+view_students()
