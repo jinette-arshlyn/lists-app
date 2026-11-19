@@ -14,4 +14,4 @@ def add_student():
 
     print(f"Student {name} added successfully!")
 
-add_student()
+print(add_student())
